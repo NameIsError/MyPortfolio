@@ -6,20 +6,23 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    Col 1
-                </div>
-                <div class="col-md-4">
-                    Col 2
-                </div>
-                <div class="col-md-4">
-                    Col 3
+        <div ng-app="index" ng-controller="mainCtrl" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        Col 1
+                    </div>
+                    <div class="col-md-4">
+                        Col 2
+                    </div>
+                    <div class="col-md-4">
+                        Col 3
+                    </div>
                 </div>
             </div>
+            <% include partials/footer %>
         </div>
-        <% include partials/footer %>
+        
         <% include partials/scripts %>
     </body>
 
