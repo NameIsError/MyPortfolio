@@ -1,4 +1,17 @@
 footer {
-  border-top: 1px solid black;
   margin-top: 40px;
+  background-color: #f8f9fa;
+}
+
+p {
+  font-family: "serif";
+}
+
+footer h5 {
+  color: black;
+  margin: 0px;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }
