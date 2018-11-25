@@ -28,14 +28,52 @@ function processData($)
     archivesList.each(function(i, elem)
     {
         var dateObject = getDate($, $(this));
-        
-        //TODO: Get numbers
-        var numbers = $(this).find('.balls');
+
+        var numbers = getNumbers($, $(this));
+
+        var stars = getStars($, $(this));
+
+        var contest = 
+        {
+            date: dateObject,
+            numbers: numbers,
+            stars: stars
+        };
+
+        console.log(contest);
 
     });
 }
 
-//Returns date object with date of euromillions date
+function getNumbers($, archive)
+{
+    var ballElements = $(archive).find('.ball');
+
+    var ballList = [];
+
+    for(var i = 0; i< ballElements.length; i++)
+    {
+        ballList.push(ballElements[i].children[0].data);
+    }
+
+    return ballList;
+}
+
+function getStars($, archive)
+{
+    var starElements = $(archive).find('.lucky-star');
+
+    var starList = [];
+
+    for(var i = 0; i< starElements.length; i++)
+    {
+        starList.push(starElements[i].children[0].data);
+    }
+
+    return starList;
+}
+
+//Returns date object with date of euromillions
 function getDate($, archive)
 {
     var title = $(archive).find('.title');
@@ -47,8 +85,6 @@ function getDate($, archive)
     dateString = dateString[dateString.length - 1];
 
     var dateObject = date.parse(dateString, 'DD-MM-YYYY');
-
-    console.log(dateObject);
     
     return dateObject;
 }
